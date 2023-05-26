@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f8b500;
+    padding: 1.4rem 0 1rem 0;
+}
+
+.container {
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #666;
+}
+
+#savingsAccountInfo,
+#checkingAccountInfo {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#savingsAccountInfo p,
+#checkingAccountInfo p {
+    margin: 5px 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+span {
+    font-weight: normal;
+    color: #555;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        max-width: 90%;
+    }
+}
