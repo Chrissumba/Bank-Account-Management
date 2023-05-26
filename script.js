@@ -1,35 +1,35 @@
 class BankAccount {
     constructor(accountNumber, accountHolder, balance) {
-        this._accountNumber = accountNumber;
-        this._accountHolder = accountHolder;
-        this._balance = balance;
+        this.theAccountNumber = accountNumber;
+        this.theAccountHolder = accountHolder;
+        this.theBalance = balance;
     }
 
     getAccountNumber() {
-        return this._accountNumber;
+        return this.theAccountNumber;
     }
 
     getAccountHolder() {
-        return this._accountHolder;
+        return this.theAccountHolder;
     }
 
     getBalance() {
-        return this._balance;
+        return this.theBalance;
     }
 
     deposit(amount) {
         if (amount > 0) {
-            this._balance += amount;
-            console.log(`Deposited $${amount} into account ${this._accountNumber}`);
+            this.theBalance += amount;
+            console.log(`Deposited $${amount} into account ${this.theAccountNumber}`);
         }
     }
 
     withdraw(amount) {
-        if (amount > 0 && amount <= this._balance) {
-            this._balance -= amount;
-            console.log(`Withdrawn $${amount} from account ${this._accountNumber}`);
+        if (amount > 0 && amount <= this.theBalance) {
+            this.theBalance -= amount;
+            console.log(`Withdrawn $${amount} from account ${this.theAccountNumber}`);
         } else {
-            console.log(`Insufficient balance in account ${this._accountNumber}`);
+            console.log(`Insufficient balance in account ${this.theAccountNumber}`);
         }
     }
 }
@@ -41,8 +41,8 @@ class SavingsAccount extends BankAccount {
     }
 
     calculateInterest() {
-        const interestAmount = this._balance * (this._interestRate / 100);
-        console.log(`Interest amount for account ${this._accountNumber}: $${interestAmount}`);
+        const interestAmount = this.theBalance * (this._interestRate / 100);
+        console.log(`Interest amount for account ${this.theAccountNumber}: $${interestAmount}`);
         return interestAmount;
     }
 }
@@ -54,19 +54,19 @@ class CheckingAccount extends BankAccount {
     }
 
     withdraw(amount) {
-        const availableBalance = this._balance + this._overdraftLimit;
+        const availableBalance = this.theBalance + this._overdraftLimit;
         if (amount > 0 && amount <= availableBalance) {
-            if (amount <= this._balance) {
-                this._balance -= amount;
-                console.log(`Withdrawn $${amount} from account ${this._accountNumber}`);
+            if (amount <= this.theBalance) {
+                this.theBalance -= amount;
+                console.log(`Withdrawn $${amount} from account ${this.theAccountNumber}`);
             } else {
-                const remainingAmount = amount - this._balance;
-                this._balance = 0;
-                console.log(`Withdrawn $${this._balance} (balance exhausted) from account ${this._accountNumber}`);
-                console.log(`Withdrawn $${remainingAmount} from overdraft limit of account ${this._accountNumber}`);
+                const remainingAmount = amount - this.theBalance;
+                this.theBalance = 0;
+                console.log(`Withdrawn $${this.theBalance} (balance exhausted) from account ${this.theAccountNumber}`);
+                console.log(`Withdrawn $${remainingAmount} from overdraft limit of account ${this.theAccountNumber}`);
             }
         } else {
-            console.log(`Withdrawal amount exceeds available balance and overdraft limit in account ${this._accountNumber}`);
+            console.log(`Withdrawal amount exceeds available balance and overdraft limit in account ${this.theAccountNumber}`);
         }
     }
 }
