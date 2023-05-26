@@ -85,10 +85,10 @@ document.getElementById("checkingAccountHolder").textContent = checkingAccount.g
 document.getElementById("checkingAccountBalance").textContent = checkingAccount.getBalance();
 
 // Performing operations
-savingsAccount.deposit(2000);
-savingsAccount.withdraw(1500);
+savingsAccount.deposit(302);
+savingsAccount.withdraw(1216);
 savingsAccount.calculateInterest();
 
-checkingAccount.deposit(500);
-checkingAccount.withdraw(4000);
-checkingAccount.withdraw(500);
+checkingAccount.deposit(150);
+checkingAccount.withdraw(37);
+checkingAccount.withdraw(101010);
